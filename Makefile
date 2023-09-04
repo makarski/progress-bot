@@ -6,7 +6,7 @@ build:
 config:
 	@./interactive_configs.sh
 
-run: config env
+run: config
 	$(call run_app)
 
 define run_app
