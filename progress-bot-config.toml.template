@@ -1,0 +1,23 @@
+[jira]
+user = ${PB_JIRA_EMAIL}
+account_id = ${PB_JIRA_ACCOUNT_ID}
+base_url = ${PB_JIRA_BASE_URL}
+token = ${PB_JIRA_TOKEN}
+project = ${PB_JIRA_PROJECT}
+
+[slack]
+statuses_emoji = [
+  { name = "Done", emoji = ":white_check_mark:" },
+  { name = "In Progress", emoji = ":construction_worker:" },
+  { name = "In Review", emoji = ":eyes:" },
+  { name = "To Do", emoji = ":memo:" },
+]
+token = ${PB_SLACK_TOKEN}
+channel = ${PB_SLACK_CHANNEL}
+
+[openai]
+token = ${PB_OPENAI_TOKEN}
+gpt_model = ${PB_OPENAI_MODEL}
+
+[schedule]
+since_duration = "24h"
