@@ -2,6 +2,7 @@ package jira
 
 import (
 	"fmt"
+	"sort"
 	"time"
 
 	"github.com/andygrunwald/go-jira"
@@ -94,7 +95,12 @@ func (jv *JiraViewer) FilterWithStatusChange(issues []jira.Issue, compareToDate 
 			continue
 		}
 
-		for _, history := range issue.Changelog.Histories {
+		histories := issue.Changelog.Histories
+		sort.Slice(histories, func(i, j int) bool {
+			return histories[i].Created < histories[j].Created
+		})
+
+		for _, history := range histories {
 			if len(history.Items) < 1 {
 				continue
 			}
