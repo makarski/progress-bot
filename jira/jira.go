@@ -157,6 +157,10 @@ func (jv *JiraViewer) FilterWithStatusChange(issues []jira.Issue, compareToDate 
 				issueStatusChange.Description = issue.Fields.Description
 				issueStatusChange.Date = changeDate
 				issueStatusChange.To = item.ToString
+				issueStatusChange.Reporter = issue.Fields.Reporter.DisplayName
+				issueStatusChange.Assignee = assignee
+				issueStatusChange.Kind = issue.Fields.Type.Name
+				issueStatusChange.Components = components
 			}
 		}
 	}
