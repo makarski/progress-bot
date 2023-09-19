@@ -82,7 +82,7 @@ func (sm *SlackMessenger) SendMessage(
 			))
 
 			msg = slack.AddBlockMessage(msg, slack.NewContextBlock("",
-				slack.NewTextBlockObject(slack.MarkdownType, fmt.Sprintf("*Reporter*: %s *Assignee*: %s", item.Reporter, item.Reporter), false, false),
+				slack.NewTextBlockObject(slack.MarkdownType, fmt.Sprintf("*Reporter*: %s *Assignee*: %s", item.Reporter, item.Assignee), false, false),
 			))
 		}
 	}
