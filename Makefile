@@ -10,5 +10,5 @@ run: config
 	$(call run_app)
 
 define run_app
-	@docker run -it progress-bot
+	@docker run progress-bot
 endef
